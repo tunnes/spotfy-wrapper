@@ -4,6 +4,8 @@
   "description": "An simple spotfy wrapper builded with JavaScript ES6 and TDD.",
   "main": "index.js",
   "scripts": {
+    "test:specs": "./node_modules/.bin/mocha ./specs/*.spec.js --require babel-register",
+    "test:coverage": "./node_modules/.bin/nyc npm run test:specs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -37,7 +39,12 @@
     "node-fetch": "^1.7.3",
     "nyc": "^11.4.1",
     "sinon": "^4.1.5",
+    "sinon-chai": "^2.14.0",
     "sinon-stub-promise": "^4.0.0",
     "webpack": "^3.10.0"
+  },
+  "nyc":{
+    "reporter": ["text", "html"],
+    "exclude": ["specs/*"]
   }
 }
