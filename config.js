@@ -1,0 +1,3 @@
+const spotfyToken = 'BQCjx_B9e-KWFN92_3XYJmTzFQbiD6plDaa6TvwnIeznTNwsI2Pze1vget0joXWrcSTWRLiDnRKY6YDi0ew1dQ3_rmvD8BZyGVcbgauypJ5eejYhU4fyeaoxTQL0drOSGlRTDQoeFjL0';
+
+export default spotfyToken;
