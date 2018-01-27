@@ -1,7 +1,8 @@
+import { artistSearch } from '../src/search';
+
 global.fetch = require('node-fetch');
 
-import { artistSearch } from '../src/main';
-
-
 const responsePromise = artistSearch('Strokes');
-responsePromise.then(data => data.artists.items.map(item => console.log(item.name)));
+const trowSucess = items => items.map(item => process.stdout.write(`- ${item.name}\n`));
+responsePromise
+  .then(data => trowSucess(data.artists.items));

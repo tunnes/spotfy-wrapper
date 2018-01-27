@@ -2,9 +2,13 @@
   "name": "spotfy-wrapper",
   "version": "1.0.0",
   "description": "An simple spotfy wrapper builded with JavaScript ES6 and TDD.",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
+    "clear": "rimraf lib",
+    "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
+    "build:watch": "npm run build -- --watch",
     "test:specs": "./node_modules/.bin/mocha ./specs/*.spec.js --require babel-register",
+    "test:specs:watch": "npm run test:specs -- --watch",
     "test:coverage": "./node_modules/.bin/nyc npm run test:specs",
     "example": "./node_modules/.bin/babel-node ./example/example.js"
   },
@@ -38,13 +42,19 @@
     "mocha": "^4.1.0",
     "node-fetch": "^1.7.3",
     "nyc": "^11.4.1",
+    "rimraf": "^2.6.2",
     "sinon": "^4.1.5",
     "sinon-chai": "^2.14.0",
     "sinon-stub-promise": "^4.0.0",
     "webpack": "^3.10.0"
   },
-  "nyc":{
-    "reporter": ["text", "html"],
-    "exclude": ["specs/*"]
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "specs/*"
+    ]
   }
 }

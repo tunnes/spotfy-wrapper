@@ -16,11 +16,11 @@ import sinonStupPromise from 'sinon-stub-promise'; // Import sinonStubPromise to
 chai.use(sinonChai);      // Tells to chai to use sinonChai.
 sinonStupPromise(sinon)   // Tells to sinonStupPromise to use sinon stubs.
 
-import { generalSearch, artistSearch, albumSearch, trackSearch, playlistSearch  } from '../src/main'; // Important! not use extension files for example main.js
+import { generalSearch, artistSearch, albumSearch, trackSearch, playlistSearch  } from '../src/search'; // Important! not use extension files for example main.js
 
 global.fetch = require('node-fetch'); // Active node-fetch to global spec scope.
 
-describe("Spotfy Wrapper", function() {
+describe("Search Wrapper", function() {
   let fetchedStub;
   let promiseStub;
   

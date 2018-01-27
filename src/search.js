@@ -1,12 +1,8 @@
-import spotfyToken from '../config';
+import { API_HEADER, API_BASE_PATH } from './config';
+import { toJSON } from './utils';
 
 const generalSearch = (query, type) =>
-  fetch(`https://api.spotify.com/v1/search?q=${query}&type=${type}`,{
-    headers: {
-      Authorization: `Bearer ${spotfyToken}`,
-    },
-  })
-    .then(data => data.json());
+  fetch(`${API_BASE_PATH}/search?q=${query}&type=${type}`, API_HEADER).then(toJSON);
 
 const playlistSearch = query => generalSearch(query, 'playlist');
 const artistSearch = query => generalSearch(query, 'artist');
