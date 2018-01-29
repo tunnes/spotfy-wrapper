@@ -7,6 +7,6 @@ const generalSearch = (query, type) =>
 const playlistSearch = query => generalSearch(query, 'playlist');
 const artistSearch = query => generalSearch(query, 'artist');
 const albumSearch = query => generalSearch(query, 'album');
-const trackSearch = query => generalSearch(query, 'track');
+const trackSearch = query => generalSearch(query, 'track'); 
 
 export { generalSearch, artistSearch, albumSearch, trackSearch, playlistSearch };
