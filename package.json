@@ -13,7 +13,9 @@
     "test:specs": "./node_modules/.bin/mocha ./specs/*.spec.js --require babel-register",
     "test:specs:watch": "npm run test:specs -- --watch",
     "test:coverage": "./node_modules/.bin/nyc npm run test:specs",
+    "test:coveralls": "npm run test:coverage && nyc report --reporter-text-lcov | coveralls",
     "example": "./node_modules/.bin/babel-node ./example/example.js"
+    
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
     "eslint": "^4.15.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
