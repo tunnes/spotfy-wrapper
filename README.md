@@ -1,4 +1,5 @@
 # Spotify Wrapper
+[![Build Status](https://travis-ci.org/tunnes/spotfy-wrapper.svg?branch=master)](https://travis-ci.org/tunnes/spotfy-wrapper)  
 An simple and humanized JavaScript interface wrapper to [Spotify API](https://developer.spotify.com/web-api/).
 
 ## Browser Support 
