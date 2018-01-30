@@ -14,7 +14,7 @@ describe('SpotifyWrapper', () => {
     let fetchedStub;
 
     beforeEach(() => {
-        spotifyWrapper = new SpotifyWrapper({url: 'foo', token: 'bar'});
+        spotifyWrapper = new SpotifyWrapper({token: 'bar'});
         fetchedStub = sinon.stub(global, 'fetch');
         
     });
@@ -27,12 +27,12 @@ describe('SpotifyWrapper', () => {
         expect(spotifyWrapper).to.be.an.instanceOf(SpotifyWrapper);
     });
     
-    it('Should receive `basePath` with attribute', () => {
-        expect(spotifyWrapper.basePath).to.be.eql('https://api.spotify.com/v1')
+    it('Should receive `url` with attribute', () => {
+        expect(spotifyWrapper.url).to.be.eql('https://api.spotify.com/v1')
     });
     
     it("Should have default path when it's not parameterized", () => {
-        expect(spotifyWrapper.basePath).to.be.eql('https://api.spotify.com/v1');
+        expect(spotifyWrapper.url).to.be.eql('https://api.spotify.com/v1');
     })
     
     it('Should receive `token` with attribute', () => {        

@@ -1,29 +1,21 @@
 import { generalSearch, artistSearch, albumSearch, trackSearch, playlistSearch } from './search';
-import { getAlbum, getAlbumTracks, getAlbums } from './album';
+
+import album from './album';
 
 import { API_BASE_PATH } from './config';
-// module.exports = {
-//   generalSearch,
-//   artistSearch,
-//   albumSearch,
-//   trackSearch,
-//   playlistSearch,
-//   getAlbum,
-//   getAlbumTracks,
-//   getAlbums,
-// };
 
 export default class SpotifyWrapper {
   constructor(options) {
-    this.basePath = options.basePath || API_BASE_PATH;
-    this.token = options.token || API_BASE_PATH;
+    this.url = options.url || API_BASE_PATH;
+    this.token = options.token;
+    this.album = album.bind(this)();
   }
   request(url) {
-    const header = {
+    const headers = {
       headers: {
         Authorization: `Bearer ${this.token}`,
       },
     };
-    fetch(url, header);
+    return fetch(url, headers);
   }
 }

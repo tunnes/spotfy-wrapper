@@ -1,11 +1,8 @@
-import { API_HEADER, API_BASE_PATH } from './config';
-import { toJSON } from './utils';
+export default function album() {
+  return {
+    getAlbum: albumID => this.request(`${this.url}/albums/${albumID}`),
+    getTracks: albumID => this.request(`${this.url}/albums/${albumID}/tracks`),
+    getAlbums: arrayAlbumID => this.request(`${this.url}/albums/?ids=${arrayAlbumID}`),
+  };
+}
 
-export const getAlbum = albumID =>
-  fetch(`${API_BASE_PATH}/albums/${albumID}`, API_HEADER).then(toJSON);
-
-export const getAlbumTracks = albumID =>
-  fetch(`${API_BASE_PATH}/albums/${albumID}/tracks`, API_HEADER).then(toJSON);
-
-export const getAlbums = arrayAlbumID =>
-  fetch(`${API_BASE_PATH}/albums/?ids=${arrayAlbumID}`, API_HEADER).then(toJSON);
