@@ -1,12 +1,13 @@
-import { API_HEADER, API_BASE_PATH } from './config';
-import { toJSON } from './utils';
 
-const generalSearch = (query, type) =>
-  fetch(`${API_BASE_PATH}/search?q=${query}&type=${type}`, API_HEADER).then(toJSON);
+function genericSearch(type, query) {
+  return this.request(`${this.url}/search?q=${query}&type=${type}`);
+}
 
-const playlistSearch = query => generalSearch(query, 'playlist');
-const artistSearch = query => generalSearch(query, 'artist');
-const albumSearch = query => generalSearch(query, 'album');
-const trackSearch = query => generalSearch(query, 'track'); 
-
-export { generalSearch, artistSearch, albumSearch, trackSearch, playlistSearch };
+export default function search() {
+  return {
+    playlists: genericSearch.bind(this, 'playlist'),
+    artists: genericSearch.bind(this, 'artist'),
+    albums: genericSearch.bind(this, 'album'),
+    tracks: genericSearch.bind(this, 'track'),
+  };
+}
