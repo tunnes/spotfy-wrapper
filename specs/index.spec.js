@@ -1,13 +1,14 @@
 /* eslint-disable */
 import chai, { expect } from 'chai';
-import SpotifyWrapper  from '../src/index';
-
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
-
-chai.use(sinonChai)
+import sinonStubPromise from 'sinon-stub-promise';
+sinonStubPromise(sinon);
+chai.use(sinonChai);
 
 global.fetch = require('node-fetch');
+
+import SpotifyWrapper  from '../src/index';
 
 describe('SpotifyWrapper', () => {
     let spotifyWrapper;
@@ -16,7 +17,7 @@ describe('SpotifyWrapper', () => {
     beforeEach(() => {
         spotifyWrapper = new SpotifyWrapper({token: 'bar'});
         fetchedStub = sinon.stub(global, 'fetch');
-        
+        fetchedStub.returnsPromise();
     });
 
     afterEach(function(){
@@ -45,17 +46,23 @@ describe('SpotifyWrapper', () => {
     })
     // precisa fazer a requisição para a url correta.
     it('Should request to correct URL', () => {
-        spotifyWrapper.request('url')
+        spotifyWrapper = new SpotifyWrapper({token: 'bar'});
+        spotifyWrapper.request('url');
         expect(fetchedStub).to.have.been.calledWith('url');
     });
     // precisa estar utilizando o headers certo.
     it('Should request with correct request headers', () => {
-        const header = {
+        let spotify = new SpotifyWrapper({
+            token: 'foo'
+        });
+    
+        const headers = {
             headers: {
-              Authorization: `Bearer bar`,
+                Authorization: `'Bearer foo'`,
             },
         };
-        spotifyWrapper.request('url')
-        expect(fetchedStub).to.have.been.calledWith('url', header);
+    
+        spotify.request('url');
+        expect(fetchedStub).to.have.been.calledWith('url', headers);
     });
 });
