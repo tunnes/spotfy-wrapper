@@ -9,7 +9,8 @@
 <body>
     <script src="../dist/spotify-wrapper.umd.js"></script>
     <script>
-        const albums = spotfyWrapper.albumSearch("Strokes");
+        const spotifyWrapper = new SpotifyWrapper({ token: 'BQDoBFgimiq8Hp6bHz4Tox-kbCsaFwrccblpa9SBaBhqRlfSrPBszqT-NCigt5R95FeSIlcxh1nuGs-YoOuYy28tCyFX-nBs4vTJGJ9etM5wX6ZcfeMbDBRuG-svYJv8ggmzloiAn9qMK_g' });
+        const albums = spotifyWrapper.search.albums("Strokes");
         const createTemplate = items => items.map(item => `<img src='${item.images[0].url}' alt='${item.name}'>` ).join('')
         const appendTemplate = template => document.querySelector('.template-wrapper').innerHTML = template;
         albums.then(data => appendTemplate(createTemplate(data.albums.items)));

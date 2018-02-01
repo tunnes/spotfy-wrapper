@@ -1,12 +1,11 @@
-const webpack = require('webpack');
 
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './index',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    library: 'spotfyWrapper',
+    library: 'SpotifyWrapper',
     libraryTarget: 'umd',
   },
   devtool: 'source-map',

@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["spotfyWrapper"] = factory();
+		exports["SpotifyWrapper"] = factory();
 	else
-		root["spotfyWrapper"] = factory();
+		root["SpotifyWrapper"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -80,25 +80,34 @@ return /******/ (function(modules) { // webpackBootstrap
 "use strict";
 
 
+module.exports = __webpack_require__(1).default;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _album = __webpack_require__(1);
+var _album = __webpack_require__(2);
 
 var _album2 = _interopRequireDefault(_album);
 
-var _search = __webpack_require__(2);
+var _search = __webpack_require__(3);
 
 var _search2 = _interopRequireDefault(_search);
 
-var _config = __webpack_require__(3);
+var _config = __webpack_require__(4);
 
 var _config2 = _interopRequireDefault(_config);
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(5);
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -135,7 +144,7 @@ var SpotifyWrapper = function () {
 exports.default = SpotifyWrapper;
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -162,7 +171,7 @@ function album() {
 }
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -187,7 +196,7 @@ function search() {
 }
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -202,7 +211,7 @@ var API_URL = 'https://api.spotify.com/v1';
 exports.default = API_URL;
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

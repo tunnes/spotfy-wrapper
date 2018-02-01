@@ -4,7 +4,7 @@
   "description": "An simple spotfy wrapper builded with JavaScript ES6 and TDD.",
   "main": "./lib/index.js",
   "scripts": {
-    "clear": "rimraf lib",
+    "clear": "rimraf lib dist",
     "build": "npm run build:lib && npm run build:umd && npm run build:umd:min",
     "build:lib": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
     "build:lib:watch": "npm run build -- --watch",
