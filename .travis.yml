@@ -10,3 +10,6 @@ before_script:
 
 after_success:
   - npm run test:coveralls 
+
+git:
+  lfs_skip_smudge: true
