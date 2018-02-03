@@ -1,7 +1,7 @@
 # Spotify Wrapper
 
-[![Build Status](https://travis-ci.org/tunnes/spotify-wrapper.svg?branch=master)](https://travis-ci.org/tunnes/spotify-wrapper)
-[![Coverage Status](https://coveralls.io/repos/github/tunnes/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/tunnes/spotify-wrapper?branch=master)   
+[![Build Status](https://travis-ci.org/tunnes/spotfy-wrapper.svg?branch=master)](https://travis-ci.org/tunnes/spotify-wrapper)
+[![Coverage Status](https://coveralls.io/repos/github/tunnes/spotfy-wrapper/badge.svg?branch=master)](https://coveralls.io/github/tunnes/spotify-wrapper?branch=master)   
 
 An simple and humanized JavaScript interface wrapper to [Spotify API](https://developer.spotify.com/web-api/).
 
