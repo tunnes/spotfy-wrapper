@@ -1,7 +1,7 @@
 # Spotify Wrapper
 
-[![Build Status](https://travis-ci.org/tunnes/spotfy-wrapper.svg?branch=master)](https://travis-ci.org/tunnes/spotfy-wrapper)
-[![Coverage Status](https://coveralls.io/repos/github/tunnes/spotfy-wrapper/badge.svg?branch=master)](https://coveralls.io/github/tunnes/spotfy-wrapper?branch=master)   
+[![Build Status](https://travis-ci.org/tunnes/spotify-wrapper.svg?branch=master)](https://travis-ci.org/tunnes/spotify-wrapper)
+[![Coverage Status](https://coveralls.io/repos/github/tunnes/spotify-wrapper/badge.svg?branch=master)](https://coveralls.io/github/tunnes/spotify-wrapper?branch=master)   
 
 An simple and humanized JavaScript interface wrapper to [Spotify API](https://developer.spotify.com/web-api/).
 
@@ -130,7 +130,7 @@ const albums = spotifyWrapper.searchAlbums('Strokes');
  
  | Argument | Type     | Options                           |
  |----------|----------|-----------------------------------|
- | `ID`     | *String* | 'Specific SpotfyAlbumID'          |
+ | `ID`     | *String* | 'Specific SpotifyAlbumID'          |
  
  ```js
  getAlbum('0sNOF9WDwhWunNAHPD3Baj')
@@ -144,7 +144,7 @@ const albums = spotifyWrapper.searchAlbums('Strokes');
 
  | Argument | Type     | Options                           |
  |----------|----------|-----------------------------------|
- | `ID`     | *String* | 'Specific SpotfyAlbumID'          |
+ | `ID`     | *String* | 'Specific SpotifyAlbumID'          |
 
  ```js
  getAlbumTracks('0sNOF9WDwhWunNAHPD3Baj')
@@ -158,7 +158,7 @@ const albums = spotifyWrapper.searchAlbums('Strokes');
 
 | Argument | Type               | Options                           |
 |----------|--------------------|-----------------------------------|
-| `IDs`    | *Array of Strings* | 'Specific SpotfyAlbumID'          |
+| `IDs`    | *Array of Strings* | 'Specific SpotifyAlbumID'          |
  
  ```js
  getAlbums(['0sNOF9WDwhWunNAHPD3Baj','1sNA78WDwhTunDAHS6SDAj'])

@@ -1,8 +1,8 @@
 /* eslint-disable */
 /**
- * Spotfy Wrapper
+ * Spotify Wrapper
  * This is an simple exercise to put in praticle some concepts learned in Js TDD course.
- * in this exercise i should use the Spotfy API to get and provide to user the follow requirements:
+ * in this exercise i should use the Spotify API to get and provide to user the follow requirements:
  * - General search by whatever thing.
  * - Search by artists, albums, playlistss and tracks.
  * */

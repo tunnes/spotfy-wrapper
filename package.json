@@ -1,7 +1,7 @@
 {
   "name": "spotfy-wrapper",
-  "version": "1.0.1",
-  "description": "An simple spotfy wrapper builded with JavaScript ES6 and TDD.",
+  "version": "1.0.2",
+  "description": "An simple spotify wrapper builded with JavaScript ES6 and TDD.",
   "main": "./lib/index.js",
   "scripts": {
     "clear": "rimraf lib dist",
@@ -24,7 +24,7 @@
   },
   "keywords": [
     "TDD",
-    "Spotfy",
+    "Spotify",
     "API",
     "ES6",
     "Js"
